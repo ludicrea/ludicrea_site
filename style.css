@@ -1,0 +1,684 @@
+/* 
+    【全体設定】
+    Webページ全体の基本的なスタイルを定義します。
+*/
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* カラーパレット（Light Theme） */
+    --bg-color: #f9fbfd;
+    /* 背景色：澄んだ空気を感じる非常に薄いブルーグレー */
+    --text-main: #2c3e50;
+    /* メイン文字色：知的な印象のダークネイビー */
+    --text-sub: #546e7a;
+    /* サブ文字色：落ち着いたブルーグレー */
+    --accent-gold: #b8860b;
+    /* アクセント：知恵と光を表すダークゴールド */
+    --accent-blue: #4facfe;
+    /* アクセント：池や空の爽やかさを表すクリアブルー */
+    --accent-green: #43e97b;
+    /* アクセント：草原の生命力を表すフレッシュグリーン */
+
+    /* ガラス風デザインの設定 */
+    --glass-bg: rgba(255, 255, 255, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    background-color: var(--bg-color);
+    background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    color: var(--text-main);
+    line-height: 1.8;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* 
+    【背景アニメーション】
+*/
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.6;
+    animation: float 25s infinite ease-in-out;
+    mix-blend-mode: multiply;
+}
+
+.orb-1 {
+    width: 600px;
+    height: 600px;
+    background: #e0c3fc;
+    top: -10%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 500px;
+    height: 500px;
+    background: #8ec5fc;
+    bottom: -10%;
+    right: -10%;
+    animation-delay: -5s;
+}
+
+.orb-3 {
+    width: 400px;
+    height: 400px;
+    background: #96e6a1;
+    top: 30%;
+    left: 30%;
+    opacity: 0.4;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(30px, 50px) scale(1.1);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+/* 
+    【ヘッダー】
+*/
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--accent-blue);
+}
+
+.btn-nav {
+    background: linear-gradient(120deg, var(--accent-blue) 0%, var(--accent-green) 100%);
+    padding: 10px 24px;
+    border-radius: 50px;
+    color: white !important;
+    border: none;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s !important;
+}
+
+.btn-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+}
+
+/* 
+    【Heroセクション】
+*/
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.main-copy {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 400;
+    margin-bottom: 25px;
+    letter-spacing: 0.05em;
+    color: var(--text-main);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sub-copy {
+    font-size: 1.2rem;
+    color: var(--text-sub);
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: linear-gradient(to right, var(--accent-blue) 0%, var(--accent-green) 100%);
+    color: white;
+    padding: 18px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    box-shadow: 0 10px 30px rgba(67, 233, 123, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(67, 233, 123, 0.4);
+    text-align: center;
+}
+
+/* 
+    【共通セクション設定】
+*/
+section {
+    padding: 80px 20px;
+}
+
+.problem {
+    padding-top: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 50px;
+    color: var(--text-main);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--accent-gold);
+    margin: 15px auto 0;
+    opacity: 0.6;
+}
+
+.text-body {
+    font-size: 1.15rem;
+    color: var(--text-sub);
+    line-height: 2.2;
+}
+
+/* 
+    【Aboutセクション】
+    ルディクレアとは
+*/
+.about {
+    background: white;
+    position: relative;
+}
+
+.about-content {
+    margin-bottom: 60px;
+}
+
+/* ここが重要：PCでは横並びにする設定 */
+.etymology-box {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    margin: 50px 0;
+    flex-wrap: nowrap;
+    /* PCでは折り返さない */
+}
+
+/* カードスタイルの適用 */
+.etymology-item {
+    background: var(--glass-bg);
+    border: 1px solid white;
+    padding: 40px 30px;
+    border-radius: 24px;
+    width: 45%;
+    min-width: 300px;
+    box-shadow: var(--glass-shadow);
+    text-align: center;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.etymology-item:hover {
+    transform: translateY(-5px);
+}
+
+.etymology-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+    margin: 0 0 10px 0;
+}
+
+.lang-origin {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-sub);
+    margin-bottom: 20px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.plus-sign {
+    font-size: 3rem;
+    color: var(--accent-blue);
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-explanation {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    text-align: left;
+}
+
+.logo-visual {
+    flex: 1;
+    max-width: 300px;
+    padding: 40px;
+    background: var(--bg-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.03);
+}
+
+.logo-visual img {
+    width: 60%;
+    height: auto;
+}
+
+.logo-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.logo-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    border-bottom: 2px solid var(--accent-green);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* 
+    【Structureセクション（カード）】
+*/
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.card {
+    background: var(--glass-bg);
+    border: 1px solid white;
+    padding: 50px 35px;
+    border-radius: 24px;
+    text-align: left;
+    transition: all 0.4s ease;
+    box-shadow: var(--glass-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(31, 38, 135, 0.15);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: #ccc;
+}
+
+#park.card::before {
+    background: var(--accent-green);
+}
+
+#lake.card::before {
+    background: var(--accent-blue);
+}
+
+#grassland.card::before {
+    background: var(--accent-gold);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.card-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--text-sub);
+    display: block;
+    margin-top: 5px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.card-desc {
+    font-size: 1rem;
+    color: var(--text-sub);
+    line-height: 1.9;
+}
+
+.keyword-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    margin: 5px 5px 5px 0;
+    padding: 0;
+    text-align: left;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.value-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 750px;
+}
+
+.value-list li {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s;
+    align-items: center;
+    /* PCでもアイコンとテキストを垂直方向中央揃え */
+    text-align: left;
+    /* PCでは左揃え */
+}
+
+.value-list li:hover {
+    transform: scale(1.02);
+}
+
+.check-icon {
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    background: #eef7ff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    /* アイコンが縮まないように */
+}
+
+.value-text strong {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.value-text p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-sub);
+}
+
+/* 
+    【CTAセクション】
+*/
+.cta {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #e6f3ff 100%);
+    padding: 40px 20px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-title {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    color: var(--text-main);
+    width: 100%;
+    text-align: center;
+}
+
+.cta-text {
+    margin-bottom: 50px;
+    color: var(--text-sub);
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-large {
+    padding: 20px 70px;
+    font-size: 1.2rem;
+    display: inline-block;
+}
+
+.cta-note {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    opacity: 0.8;
+    width: 100%;
+    text-align: center;
+}
+
+/* 
+    【フッター】
+*/
+.footer {
+    padding: 60px 0;
+    border-top: none;
+    text-align: center;
+    background: #f9fbfd;
+}
+
+.footer-logo img {
+    height: 35px;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #99aab5;
+}
+
+/* 
+    【レスポンシブ対応 (SP)】
+    最後に記述して上書きする
+*/
+@media (max-width: 768px) {
+    .main-copy {
+        font-size: 3rem;
+    }
+
+    .header {
+        padding: 10px 0;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .hero {
+        padding-top: 150px;
+        min-height: 80vh;
+        height: auto;
+    }
+
+    .nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .card {
+        padding: 30px 20px;
+    }
+
+    /* AboutセクションのSP対応 */
+    .etymology-box {
+        flex-direction: column;
+        /* 縦並び */
+        gap: 20px;
+        align-items: center;
+    }
+
+    .etymology-item {
+        width: 100%;
+        min-width: auto;
+        max-width: 100%;
+    }
+
+    .plus-sign {
+        transform: rotate(90deg);
+        /* 回転 */
+        margin: 10px 0;
+    }
+
+    .logo-explanation {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .logo-text {
+        text-align: left;
+    }
+
+    /* ValueセクションのSP対応 */
+    .value-list li {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .value-text strong {
+        margin-bottom: 15px;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+    }
+
+    section {
+        padding: 30px 0;
+    }
+}

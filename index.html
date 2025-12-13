@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludicrea | 問いを生き、美を生む。</title>
+
+    <!-- 
+        【フォントの読み込み】
+        Google Fontsから、美しく読みやすいフォントを読み込んでいます。
+        - Zen Kaku Gothic New: 日本語の本文用。モダンで知的な印象。
+        - Cormorant Garamond: 英語の見出し用。伝統的で優雅な印象。
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- 
+        【CSSの読み込み】
+        デザインを指定するstyle.cssファイルを読み込んでいます。
+    -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 
+        【背景アニメーション】
+        画面全体に広がる、ゆっくりと動く背景です。
+        CSSで制御され、静的な画像ではなく「生成」を感じさせる動きを作ります。
+    -->
+    <div class="background-animation">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- 
+        【ヘッダー】
+        画面上部に固定されるナビゲーションバーです。
+        ロゴとメニューが含まれます。
+    -->
+    <header class="header">
+        <div class="header-container">
+            <!-- ロゴ画像 -->
+            <div class="logo">
+                <img src="ludicrea_logo.png" alt="Ludicrea Logo">
+            </div>
+            <!-- ナビゲーションメニュー -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about">ルディクレアとは</a></li>
+                    <li><a href="#service">それ哲公園</a></li>
+                    <li><a href="#join" class="btn-nav">参加する</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 
+        【Heroセクション】
+        ファーストビュー（最初に表示される画面）です。
+        最も重要なメッセージ（キャッチコピー）を伝えます。
+    -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="main-copy">問いを生き、<br>美を生む。</h1>
+            <p class="sub-copy">絶対者なき世界で、<br>あなただけの「本当の言葉」を見つける場所。</p>
+            <a href="#service" class="btn-primary">それ哲公園を散策する</a>
+        </div>
+    </section>
+
+    <!-- 
+        【Problemセクション】
+        ユーザーの抱える課題や悩みに寄り添うセクションです。
+    -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title">「みんながそう思うから、<br>自分もそう思う」</h2>
+            <p class="text-body">
+                そんな息苦しさを、どこかで感じていませんか？<br>
+                借り物の言葉で語る日々は、少しずつ心を空虚にしていきます。<br>
+                <br>
+                私たちは、あなたが「あなた自身の言葉」を取り戻すための<br>
+                静かな場所を用意しました。
+            </p>
+        </div>
+    </section>
+
+    <!-- 
+        【Aboutセクション】
+        ルディクレアの哲学、社名の由来、ロゴの意味を説明します。
+    -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">ルディクレアとは</h2>
+
+            <!-- 哲学と由来 -->
+            <div class="about-content">
+                <p class="text-body">
+                    ルディクレア（Ludicrea）という名は、<br>
+                    東洋と西洋、二つの叡智の融合から生まれました。
+                </p>
+                <div class="etymology-box">
+                    <div class="etymology-item">
+                        <h3>Ludus</h3>
+                        <span class="lang-origin">ラテン語：遊び・学び</span>
+                        <p>荘子の「逍遥遊（しょうようゆう）」にある<br>「遊」の精神。<br>固定観念から離れ、自在に遊ぶこと。</p>
+                    </div>
+                    <div class="plus-sign">+</div>
+                    <div class="etymology-item">
+                        <h3>Creatio</h3>
+                        <span class="lang-origin">ラテン語：創造</span>
+                        <p>ホワイトヘッドの「創造性」。<br>互いに影響し合い、<br>新しい現実を生成すること。</p>
+                    </div>
+                </div>
+                <p class="text-body">
+                    私たちは、この二つの伝統から学びを得て、<br>
+                    人生と世の中をより豊かにすることを目指しています。
+                </p>
+            </div>
+
+            <!-- ロゴの意味 -->
+            <div class="logo-explanation">
+                <div class="logo-visual">
+                    <img src="ludicrea_logo.png" alt="Ludicrea Logo Symbolism">
+                </div>
+                <div class="logo-text">
+                    <h3>ロゴに込められた意味</h3>
+                    <p class="text-body">
+                        シンボルマークは、私たちの哲学を形にしたものです。<br>
+                        <strong>「l」は身体</strong>を、<strong>「c」は羽</strong>を表し、<br>
+                        二本の触角は<strong>東洋と西洋、二つの伝統</strong>を示しています。
+                    </p>
+                    <p class="text-body">
+                        その姿は<strong>「蝶」</strong>。<br>
+                        荘子の「胡蝶の夢」における主客未分の境地であり、<br>
+                        カオス理論における「バタフライエフェクト」<br>
+                        ——小さな羽ばたきが世界を変える可能性——の象徴でもあります。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        【Structureセクション】
+        3層構造（公園・池・草原）をカード形式で紹介します。
+    -->
+    <section class="structure" id="service">
+        <div class="container">
+            <h2 class="section-title">それ哲公園の3つのエリア</h2>
+            <div class="cards-grid">
+                <!-- Park: 公園 -->
+                <div class="card" id="park">
+                    <div class="card-icon">🌳</div>
+                    <h3 class="card-title">それ哲公園</h3>
+                    <span class="card-subtitle">Park of Dialogue</span>
+                    <p class="card-desc">
+                        <span class="keyword-tag">#対話</span>
+                        <span class="keyword-tag">#遊び</span><br>
+                        誰でも無料で参加できる、開かれた広場。<br>
+                        哲学的な問いを遊び感覚で楽しみ、<br>
+                        対話を通じて思考をほぐします。
+                    </p>
+                </div>
+
+                <!-- Lake: 池 -->
+                <div class="card" id="lake">
+                    <div class="card-icon">💧</div>
+                    <h3 class="card-title">それ哲の池</h3>
+                    <span class="card-subtitle">Lake of Reflection</span>
+                    <p class="card-desc">
+                        <span class="keyword-tag">#沈潜</span>
+                        <span class="keyword-tag">#内省</span><br>
+                        静寂の中で自分自身と向き合う場所。<br>
+                        水面を覗き込むように深く沈潜し、<br>
+                        内なる言葉を紡ぎ出します。
+                    </p>
+                </div>
+
+                <!-- Grassland: 草原 -->
+                <div class="card" id="grassland">
+                    <div class="card-icon">🌿</div>
+                    <h3 class="card-title">それ哲の草原</h3>
+                    <span class="card-subtitle">Grassland of Creation</span>
+                    <p class="card-desc">
+                        <span class="keyword-tag">#創造</span>
+                        <span class="keyword-tag">#表現</span><br>
+                        風通しの良い、創造と表現のフィールド。<br>
+                        互いの個性を認め合い、<br>
+                        新しい価値や作品を共に創り出します。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        【Value Propositionセクション】
+        提供価値をリストアップします。
+    -->
+    <section class="value">
+        <div class="container">
+            <h2 class="section-title">ここで得られるもの</h2>
+            <ul class="value-list">
+                <li>
+                    <span class="check-icon">✦</span>
+                    <div class="value-text">
+                        <strong>本当の言葉を見出す力</strong>
+                        <p>周囲の雑音から距離を置き、自身の感覚を信じる力。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✦</span>
+                    <div class="value-text">
+                        <strong>応答から生まれる真理</strong>
+                        <p>教科書にはない、あなたと他者の間でのみ生まれる発見。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✦</span>
+                    <div class="value-text">
+                        <strong>祝福し合う文化</strong>
+                        <p>他者の変容を喜び、共に成長する温かな関係性。</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 
+        【CTAセクション】
+        最終的な行動喚起（参加への誘導）です。
+    -->
+    <section class="cta" id="join">
+        <div class="cta-content">
+            <h2 class="cta-title">まずは、公園で深呼吸を。</h2>
+            <p class="cta-text">
+                ルディクレアは、いつでもあなたを待っています。<br>
+                まずは無料の「それ哲公園」で、<br>
+                新しい風を感じてみませんか？
+            </p>
+            <a href="#" class="btn-primary btn-large">メンバーシップに参加する</a>
+            <p class="cta-note">※ 現在、初期メンバー募集中</p>
+        </div>
+    </section>
+
+    <!-- 
+        【フッター】
+        著作権表示やリンクなどを配置します。
+    -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="ludicrea_logo.png" alt="Ludicrea Logo">
+            </div>
+            <p class="copyright">&copy; 2024 Ludicrea. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
