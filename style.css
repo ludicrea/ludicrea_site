@@ -567,6 +567,60 @@ section {
     text-align: center;
 }
 
+
+/* 
+    【Founder's Messageセクション】
+*/
+.founders-message {
+    background-color: #f4f6f8;
+    /* 落ち着いたグレー */
+    padding: 100px 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.message-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 60px;
+    color: var(--text-main);
+    letter-spacing: 0.15em;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    opacity: 0.9;
+}
+
+.message-body {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: left;
+    background: #fff;
+    padding: 60px;
+    border-radius: 4px;
+    /* 紙のような印象 */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+}
+
+.message-body p {
+    margin-bottom: 2em;
+    line-height: 2.4;
+    /* ゆったりとした行間 */
+    font-size: 1rem;
+    color: var(--text-main);
+    letter-spacing: 0.05em;
+}
+
+.message-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* 
+    【レスポンシブ (Founder's Message)】
+*/
+@media (max-width: 768px) {
+    .message-body {
+        padding: 40px 20px;
+    }
+}
+
 /* 
     【フッター】
 */
@@ -681,10 +735,4 @@ section {
     section {
         padding: 30px 0;
     }
-}
-
-    section {
-        padding: 30px 0;
-    }
-
 }
