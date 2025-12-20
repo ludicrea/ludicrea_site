@@ -40,6 +40,14 @@ body {
 }
 
 /* 
+    【ユーティリティ】
+    PCでは非表示、スマホでのみ表示する改行など
+*/
+.sp-only {
+    display: none;
+}
+
+/* 
     【背景アニメーション】
 */
 .background-animation {
@@ -618,6 +626,7 @@ section {
 @media (max-width: 768px) {
     .message-body {
         padding: 40px 20px;
+        text-align: center;
     }
 }
 
@@ -647,8 +656,17 @@ section {
     最後に記述して上書きする
 */
 @media (max-width: 768px) {
+    body {
+        text-align: center;
+    }
+
+    .sp-only {
+        display: inline;
+    }
+
     .main-copy {
         font-size: 2.5rem;
+        letter-spacing: 0.05em;
     }
 
     .header {
@@ -682,6 +700,7 @@ section {
 
     .card {
         padding: 30px 20px;
+        text-align: center;
     }
 
     /* AboutセクションのSP対応 */
@@ -711,7 +730,11 @@ section {
     }
 
     .logo-text {
-        text-align: left;
+        text-align: center;
+    }
+
+    .keyword-tag {
+        text-align: center;
     }
 
     /* ValueセクションのSP対応 */
