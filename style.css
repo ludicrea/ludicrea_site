@@ -373,6 +373,11 @@ section {
     padding-bottom: 5px;
 }
 
+.logo-text .text-body {
+    line-height: 2.0;
+    letter-spacing: 0.05em;
+}
+
 /* 
     【Structureセクション（カード）】
 */
@@ -731,7 +736,14 @@ section {
 
     .logo-text {
         text-align: center;
+        padding-left: 6%;
+        padding-right: 6%;
     }
+
+    .logo-text .text-body span {
+        display: inline-block;
+    }
+
 
     .keyword-tag {
         text-align: center;
